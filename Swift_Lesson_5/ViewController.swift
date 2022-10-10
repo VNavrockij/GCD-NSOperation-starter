@@ -73,6 +73,8 @@ class ViewController: UIViewController {
         print("iterations finished ")
 */
 /* NSOperation, NSOperationQueue */
+        //add dependencies
+        test2.addDependency(test1)
         oparationsQueue.addOperations([test1, test2, test3], waitUntilFinished: false)
         
     }
