@@ -11,8 +11,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("Hello, GCD")
+        
+        let queue = DispatchQueue(label: "com.multithreading.test ")
+        // add queue
+        queue.async {
+            // heavy duty simulation
+            for i in 1...3 {
+                print("iteration = \(i)")
+                sleep(1)
+            }
+            
+        }
+        
+        
+        print("iterations finished ")
     }
 
 
